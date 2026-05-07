@@ -1,27 +1,62 @@
-Para configurar a conexão com o banco de dados PostgreSQL
+# 🚀 Uniguaçu Application
 
-1. Crie um banco de dados utilizando Pgadmin chamado db_uniguacu
-2. No arquivo src/main/resources/application.properties dete projeto
-   2.1 Preencha username do seu banco de dados
-   2.2 Preencha password do seu banco de dados
-3. Configurar o SDK do Projeto: Garanta que o IntelliJ saiba que o projeto deve usar o Java 21.
-    3.1. Pressione Ctrl + Alt + Shift + S (ou vá em File > Project Structure).
-    3.2. Na aba Project, procure por SDK.
-    3.3. Se o Java 21 não estiver na lista:•Clique em Add SDK > Download JDK.•Selecione a versão 21 (recomendo a Vendor Oracle ou Eclipse Temurin).
-    3.4. Certifique-se de que o Language level também esteja definido como 21.
-4. Verificar as configurações do IntelliJ
-   Às vezes, o IntelliJ não sincroniza corretamente as configurações de Toolchain do Gradle. 
-   Siga os seguintes passos:
-     3.1. Vá em File > Settings (ou Ctrl+Alt+S).
-     3.2. Navegue até Build, Execution, Deployment > Build Tools > Gradle.
-     3.3. Verifique o campo Gradle JVM. Certifique-se de que ele está apontando para um JDK válido (preferencialmente o JDK 21 ou o "Project SDK").
-     3.4. Vá em File > Project Structure (ou Ctrl+Alt+Shift+S). 
-     3.5. Em Project, verifique se o SDK está definido como Java 21.
-5. Executando o projeto
-    No arquivo src/main/java/com/uniguacu/UniguacuApplication.java clique com o botão direito sobre o arquivo
-    e execute "Run"
-    Abra seu navegador e coloque a url: http://localhost:8080/api/test
+Este repositório contém a aplicação Uniguaçu, desenvolvida em **Java 21** e **Spring Boot**. Siga as instruções abaixo para configurar o seu ambiente de desenvolvimento.
 
-6. Acessando a documentação Swagger da API
-   Para acessar as informações da API do sistema sendo desenvolvido, você pode acessar a documentação
-   gerada automaticamente pela springdoc-openapi, acesse a url: http://localhost:8080/swagger-ui.html
+---
+
+## 🛠️ Configuração do Banco de Dados (PostgreSQL)
+
+O projeto utiliza o PostgreSQL para persistência de dados.
+
+1. **Criar a Base de Dados**:
+   - Abra o **pgAdmin**.
+   - Crie um novo banco de dados com o nome: `db_uniguacu`.
+
+2. **Configurar Credenciais**:
+   - Navegue até o ficheiro: `src/main/resources/application.properties`.
+   - Preencha as propriedades com as suas credenciais locais:
+     ```properties
+     spring.datasource.username=seu_usuario
+     spring.datasource.password=sua_senha
+     ```
+
+---
+
+## ☕ Configuração do Ambiente (SDK)
+
+É obrigatório o uso do **Java 21**. Para configurar no IntelliJ IDEA:
+
+1. Abra a estrutura do projeto: `Ctrl + Alt + Shift + S` (ou **File > Project Structure**).
+2. No menu **Project**, verifique o campo **SDK**:
+   - Se não tiver o Java 21: Clique em **Add SDK** > **Download JDK**.
+   - Escolha a versão **21** (Recomendado: *Eclipse Temurin* ou *Oracle*).
+3. Certifique-se de que o **Language level** está definido como **21**.
+
+### 🐘 Sincronização do Gradle
+Caso encontre problemas de compilação, valide a Toolchain do Gradle:
+1. Vá a **File > Settings** (`Ctrl + Alt + S`).
+2. Navegue até: `Build, Execution, Deployment > Build Tools > Gradle`.
+3. No campo **Gradle JVM**, selecione o **Project SDK (21)**.
+
+---
+
+## 🏃 Como Executar
+
+1. Localize a classe principal:  
+   `src/main/java/com/uniguacu/UniguacuApplication.java`.
+2. Clique com o botão direito e selecione **Run 'UniguacuApplication'**.
+3. **Validar Execução**:
+   Abra o navegador e aceda a: [http://localhost:8080/api/test](http://localhost:8080/api/test)
+
+---
+
+## 📖 Documentação da API
+
+A documentação interativa (Swagger/OpenAPI) está disponível para facilitar o teste dos endpoints:
+
+🔗 **Swagger UI**: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+---
+
+> [!IMPORTANT]
+> Certifique-se de que o serviço do PostgreSQL está ativo antes de iniciar a aplicação Spring Boot.
