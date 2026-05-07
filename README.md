@@ -1,7 +1,6 @@
 # 🚀 Uniguaçu Application
 
-Este repositório contém a aplicação Uniguaçu, desenvolvida em **Java 21** e **Spring Boot**. Siga as instruções abaixo para configurar o seu ambiente de desenvolvimento.
-
+Este repositório contém a aplicação de setup para as aulas do curso de Engenharia de Software e Análise e Desenvolvimento de Sistemas da Faculdade Uniguaçu. 
 ---
 
 ## 🛠️ Configuração do Banco de Dados (PostgreSQL)
