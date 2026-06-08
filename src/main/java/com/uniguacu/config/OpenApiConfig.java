@@ -14,6 +14,6 @@ public class OpenApiConfig {
                 .info(new Info()
                         .title("UniGuacu API")
                         .version("1.0")
-                        .description("Documentação dos endpoints da Aula "));
+                        .description("Sistema de Gestão Acadêmica"));
     }
 }
